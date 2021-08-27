@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "LOSTWAGE", sans-serif;
+    src: url(fonts/LOSTWAGE.ttf), format('truetype');
+
+}
+
+:root {
+    --title-color: hsla(325 90% 90%/1);
+    --white-shadow:hsla(0 0% 90%/ .7);
+    --pink-shadow: hsla(325 80% 50% / 1);
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+.header {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm28-brick-kung-104_2.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=403f8cc97830d2bd40895ea32c684e3e);
+    background: url(https://wallpaperaccess.com/full/1858113.jpg);
+    /* background: url(https://lh3.googleusercontent.com/proxy/x11O7lx92svz7N_TwMVhDwUDwU-_Q4hXjYeuuJmKBW0bk6mpEeFDTaN-I-sncGaFXz9cUTSS6VkPijQHkiNoIEQteQ) ; */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(255, 41, 166);
+    background: radial-gradient(circle, rgba(250, 93, 185, 0.85) 0%, transparent 50%);
+    z-index: 2;
+}
+
+
+.neon-font {
+    font-family: "Satisfy", serif;
+
+}
+
+.title {
+    color: hsla(325 90% 90%/1);
+    font-size: 4em;
+    padding: 60px;
+    position: relative;
+    letter-spacing: 7px;
+    
+    text-shadow:
+        0 0 .1em var(--white-shadow),
+        0 0 .2em var(--pink-shadow);
+
+    box-shadow:
+    inset 0 0 .1em var(--white-shadow),
+    0 0 .1em var(--white-shadow),
+    inset 0 0 .2em var(--pink-shadow),
+    0 0 .2em var(--pink-shadow);
+    
+ 
+
+    border: 6px solid hsla(325 90% 85%/1);
+    border-radius: 10px;
+    z-index: 3;
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    text-shadow:
+        0 0 .2em var(--white-shadow),
+        0 0 .45em var(--pink-shadow);
+    z-index: 3;
+}
