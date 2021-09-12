@@ -28,28 +28,35 @@
             <img src="/assets/istockphoto-1140180559-170667a-removebg-preview.png " alt="" class="copas">
         </div class="cartel">
     </div>
+    <div class="separador"></div>
     <section class="main-section">
         <!-- separador -->
-        <div class="separador"></div>
         <!-- seccion de busqueda -->
-        <div class="barra"></div>
-        <!-- saludo -->
-        <div class="bienvenida">
-            <h2>Bienvenido!</h2>
-            <h3>Este sitio te ayudadará a encontrar todos los tragos posibles, con los ingredientes que tu le ingreses!</h3>
+        <div class="barra">
+            
+            <div class="bienvenida">
+                <h2>Bienvenido!</h2>
+                <h3>Este sitio te ayudadará a encontrar todos los tragos posibles, con los ingredientes que tu le ingreses!</h3>
+            </div>
+            <!-- saludo -->
+            <div id="burbuja-container">
+    
+            </div>
+            <div class="search">
+                <form action="" >
+    
+                    <input type="text" name="buscador" id="input-ingrediente" placeholder="ingresa un ingrediente">
+                    <input type="submit" value="Agregar" id="input-button">
+                    <button id="close" type="button">Reset</button>
+                    <button id="search" type="button">Buscar</button>
+                </form>
+    
+            </div>
         </div>
-        <div id="burbuja-container">
-
+        <div class="tragos-container">
+            
         </div>
-        <div class="search">
-            <form action="" >
-
-                <input type="text" name="buscador" id="input-ingrediente" placeholder="ingresa un ingrediente">
-                <input type="submit" value="Agregar" id="input-button">
-                <button id="close">Reset</button>
-            </form>
-
-        </div>
+        
     </section>
 
     <script src="data.js"></script>
