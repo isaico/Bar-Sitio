@@ -139,15 +139,14 @@ body {
     z-index: 3;
 }
 .main-section{
-    min-height: 100vh;
+   
     background-color:black;
     position: relative;
     font-family: Poppins;
     
 }
 .barra{
-    width: 100vw;
-    height:100vh;
+    min-height: 100vh;
     background: url(/assets/fondo-barra.png) no-repeat;
     background-size: cover;
     background-position: center;
@@ -164,30 +163,22 @@ body {
     height: 5vh;
     background-color: black;
 }
-.search{
-    /* position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translateX(-50%); */
-    display: flex;
-    justify-content: center;
-}
-.search *{
-    padding: 1em;
-}
+
 .bienvenida{
+  
     background-color: rgb(12, 12, 12);
     text-align: center;
     font-size: 1.5em;
     border-radius: 2em;
     border:1px solid black;
-    
     font-family: Poppins;
-    margin-top: 2rem;
+    
     justify-content: center;
     width: fit-content;
-    margin: 0px auto;
+    margin: 1em auto;
     padding: 1em;
+    margin-bottom: 5rem;
+    
     
 }
 .bienvenida>h2{
@@ -203,10 +194,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: violet;
-    min-height: 250px;
-    max-height: 250px;
-    overflow-y: scroll;
+    background-color:transparent;
+    min-height:80vh;
+    overflow-y: hidden;
+    align-items: center;
+    justify-content: center;
+ 
+    
 }
 .burbuja{
     background-color: rgb(0, 187, 255);
@@ -214,8 +208,59 @@ body {
     border-radius: 40%;
     padding: .5em;
     font-size: 1.5em;
+    margin: 10px;
+    font-weight: 600;
+}
+.burbuja:hover{
+    cursor: pointer;
+    opacity: .8;
+
 }
 .burbuja-div{
     margin: 1em;
     
+}
+.trago{
+    background-color: aqua;
+}
+.burbuja-activa{
+    border: blue 2px solid;
+    box-shadow: blue 2px 2px 2px;
+}
+
+.double-screen{
+    display: flex;
+    max-height: 80vh;
+    position: relative;
+}
+#tragos-container{
+    overflow-y: scroll;
+}
+.options{
+    width: 40%;
+    position: relative;
+}
+#reset{
+   
+   
+    /* transform: translateX(50%); */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--pink-shadow);
+    font-size: 1.2em;
+    font-weight: 600;
+    font-family: Poppins;
+}
+#reset:hover{
+    cursor: pointer;
+    box-shadow: 5px 5px black;
+}
+#selected{
+    height: 10vh;
+    position: relative;
+    display: flex;
+}
+.seleccionados{
+    color: white;
+    padding: 1em;
 }

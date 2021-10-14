@@ -1,0 +1,68 @@
+[
+  {
+    "nombre": "Caipiriña",
+    "ingredientes": ["Hielo", "Lima", "Azucar", "Cachaca"],
+    "preparacion": "macerar lima y azucar, agregar  hielo roto y cachaca (1 medida), luego batir"
+ 
+  },
+  {
+    "nombre": "Mojito",
+    "ingredientes": ["Hielo", "Lima", "Azucar", "Ron", "Menta", "Soda"],
+    "preparacion": "macerar lima y azucar, agregar menta, hielo roto, ron (1 medida), y terminar con soda"
+    
+  },
+  {
+    "nombre": "Julepe de Cynar",
+    "ingredientes":  ["Hielo", "Lima", "Azucar", "Cynar", "Menta", "Gaseosa Pomelo"],
+    "preparacion": "macerar lima y azucar, agregar menta, hielo roto, cynar (1 medida), y terminar con gaseosa pomelo"
+    
+  },
+  {
+    "nombre": "Baileys Frozzen",
+    "ingredientes":  ["Helado", "Licor de Baileys", "Whisky", "Chocolates"],
+    "preparacion": "Licuar helado con el Baileys un dash (poco) de Whiskky y chocolates a gusto"
+    
+  },
+  {
+    "nombre": "Cuba Libre",
+    "ingredientes":  ["Hielo", "Limon", "Ron", "Gaseosa Cola"],
+    "preparacion": "Agregar a un vaso de trago, hielos, ron (1 medida), una rodaja de limon y terminar con Cola"
+ 
+  },
+  {
+    "nombre": "Margarita",
+    "ingredientes":  ["Hielo", "Limon", "Tequila","Triple Sec", "Azucar"],
+    "preparacion": "Enfriar copa con hielo, mezclar Tequila (1 medida), Triple Sec (1/2 medida), Jugo de limon, azucar "
+ 
+  },
+  {
+    "nombre": "Campari Orange",
+    "ingredientes":  ["Hielo", "Naranja", "Campari","Jugo de Naranja"],
+    "preparacion": "En un vaso de trago, agregar hielos,Campari (1 medida), terminar con jugo de naranja"
+ 
+  },
+  {
+    "nombre": "Daiquiri",
+    "ingredientes":  ["Hielo", "Limon", "Ron","Frutillas", "Azucar"],
+    "preparacion": "Licuar frutillas, hielo, azucar, Ron (a gusto), y un poco de jugo de limon "
+ 
+  },
+  {
+    "nombre": "Fernet & Cola",
+    "ingredientes":  ["Hielo", "Fernet", "Gaseosa Cola"],
+    "preparacion": "En un vaso de trago, agregar hielos, Fernet(1 medida), terminar con gaseosa de cola "
+ 
+  },
+  {
+    "nombre": "Vodka Orange",
+    "ingredientes":  ["Hielo", "Vodka", "Jugo de Naranja"],
+    "preparacion": "En un vaso de trago, agregar hielos, Vodka(1 medida), terminar con jugo de naranja "
+ 
+  },
+  {
+    "nombre": "Tom Collins",
+    "ingredientes":  ["Hielo","Lima","Gin","Azucar", "Gaseosa Tonica"],
+    "preparacion": "Macerar lima y azucar, agregar hielo roto y Gin(1 y 1/2 medidas), batir y terminar con gaseosa de tonica "
+ 
+  }
+]

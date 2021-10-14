@@ -36,31 +36,33 @@
             
             <div class="bienvenida">
                 <h2>Bienvenido!</h2>
-                <h3>Este sitio te ayudadará a encontrar todos los tragos posibles, con los ingredientes que tu le ingreses!</h3>
+                <h3>Selecciona los ingredientes que tengas a tu disposicion para obtener un trago!</h3>
             </div>
-            <!-- saludo -->
-            <div id="burbuja-container">
-    
+            <button type="button" id="reset"> Resetear Seleccionados</button>
+            <div id="selected">
+                
             </div>
-            <div class="search">
-                <form action="" >
-    
-                    <input type="text" name="buscador" id="input-ingrediente" placeholder="ingresa un ingrediente">
-                    <input type="submit" value="Agregar" id="input-button">
-                    <button id="close" type="button">Reset</button>
-                    <button id="search" type="button">Buscar</button>
-                </form>
-    
+            <div class="double-screen">
+                <div class="options">
+                    
+                    <div id="burbuja-container">
+                    </div>
+                </div>
+                
+                <div id="tragos-container">
+                    
+                </div>
             </div>
-        </div>
-        <div class="tragos-container">
-            
         </div>
         
     </section>
 
-    <script src="data.js"></script>
-    <script src="app.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="GET.json" ></script>
+    <script defer src="data.js"></script>
+    <script  defer src="Jquery.js"></script>
+    <script defer src="app.js"></script>
 </body>
 
 </html>
