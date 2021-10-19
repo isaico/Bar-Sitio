@@ -301,9 +301,10 @@ body {
 }
 
 .trago{
-    background-image: url(https://w7.pngwing.com/pngs/667/666/png-transparent-paper-texture-xuan-paper-texture-painting.png);
+    background-image: url(/assets/fondo-papel.png);
     background-position: center;
-    
+    background-size: cover;
+    background-repeat: repeat;
     border-radius: 2em;
     display: flex;
     flex-direction: column;
