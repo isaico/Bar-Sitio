@@ -10,19 +10,40 @@ const mostrarTrago = (tragos) => {
 
   tragos.forEach((trago) => {
     const tragoIncluido = document.createElement("div");
-
-    tragoIncluido.innerHTML = `
-
-       <span class="trago-desc"> <b>nombre: </b> ${trago.nombre} </br></span>
-      <span class="trago-desc"> <b>ingredientes: </b>${trago.ingredientes.toString()}</br></span>
-      <span class="trago-desc"> <b>preparacion: </b> ${
-        trago.preparacion
-      }</br></span>
-      </br>`;
-
-    tragoIncluido.className = "trago";
-    tragosContainer.appendChild(tragoIncluido);
-  });
+     
+    tragoIncluido.innerHTML += `
+      
+    <span class="trago-name"> ${trago.nombre} </br></span>
+    
+    <span class="trago-desc"> Ingredientes: </span>
+    
+    `
+    for (let i = 0; i < trago.ingredientes.length; i++) {
+     
+     
+      tragoIncluido.innerHTML += `
+      
+      <li class="elemento-lista.">${trago.ingredientes[i]}</li>
+      
+      `
+      
+    }
+    tragoIncluido.innerHTML += `
+    
+    
+      <div>
+        <span class="trago-desc">
+         Preparacion:
+        </span>
+        <p>
+        ${trago.preparacion}
+        </p>
+       </div>
+      `;
+      
+      tragoIncluido.className = "trago neon-font";
+      tragosContainer.appendChild(tragoIncluido);
+    });
 };
 
 const borrarTrago = () => {
@@ -30,68 +51,65 @@ const borrarTrago = () => {
 };
 
 //===============
-//============filter=================//
+//============Funciones principales=================//
 
-//selector de las opciones
+//selector de las opciones(agrega un escucha a los span)
 function selectorIngred() {
   const opcion = document.querySelectorAll("span.burbuja");
 
   let tragosFiltrados;
   opcion.forEach((element) => {
     element.addEventListener("click", function () {
-
       tragosContainer.innerHTML = "";
 
       let ingredSelected = element.innerHTML.toString();
-      // element.classList.remove("burbuja")
-      crearSeleccionados(ingredSelected)
-      
+
+      crearSeleccionados(ingredSelected);
       counterPlus(element);
 
-      console.log("contador: " + counterClick);
       if (!element.classList.contains("burbuja-activa")) {
-        if (counterClick == 1) { //si hay 1 solo click
-          
+        if (counterClick == 1) {
+          //si hay 1 solo click
+
           tragosFiltrados = primerClick(ingredSelected, tragos);
           ingredIncluido(ingred, ingredSelected);
-          tragosPrimerClick=[...tragosFiltrados]
-          if (tragosFiltrados.length > 1) { //si hay mas de 1 trago mostrado
+          tragosPrimerClick = [...tragosFiltrados]; //obtengo un array filtrado para luego usarlo en la siguiente opcion clickeada
 
-            let filteredIngred = listaIngredUser(tragosFiltrados); //retorna ingredientes filtradas
-            borraBurbujaRepetida(filteredIngred,tragosFiltrados)
+          dependencia(tragosFiltrados);
+        } else {
+          //si hay mas de 1 click
 
-          } else { //si hay 1 solo trago mostrado
-
-            let arr = [];
-            listaIngredUser(arr);
-
-          }
-        } else { //si hay mas de 1 click
-        
-          tragosFiltrados = segundoClick(ingred, ingredSelected, tragosPrimerClick);
+          tragosFiltrados = segundoClick(
+            ingred,
+            ingredSelected,
+            tragosPrimerClick
+          );
           ingredIncluido(ingred, ingredSelected);
-          
-          if (tragosFiltrados.length > 1) { //si hay mas de 1 elemento
 
-            let filteredIngred = listaIngredUser(tragosFiltrados);
-            borraBurbujaRepetida(filteredIngred,tragosFiltrados)
-
-          } else {
-
-            let arr = [];
-            listaIngredUser(arr);
-
-          }
+          dependencia(tragosFiltrados);
         }
       }
       mostrarTrago(tragosFiltrados);
     });
   });
 }
+//dependiendo de los clicks y los tragos mostrados se ejecuta esta funcion para borrar y mostrar
+function dependencia(tragosFiltrados) {
+  if (tragosFiltrados.length > 1) {
+    //si hay mas de 1 trago mostrado
 
-//filtro
+    let filteredIngred = listaIngredUser(tragosFiltrados); //retorna ingredientes filtradas
+    borraBurbujaRepetida(filteredIngred, tragosFiltrados);
+  } else {
+    //si hay 1 solo trago mostrado
+
+    let arr = [];
+    listaIngredUser(arr);
+  }
+}
+
+//filtro de tragos
 const filtrarTragos = (ingrediente, tragos) => {
-
   let tragosFiltrados = [];
   let tragosFiltradosDup = [];
 
@@ -104,17 +122,16 @@ const filtrarTragos = (ingrediente, tragos) => {
     tragosFiltrados = [...new Set(tragosFiltradosDup)];
   });
 
-  console.log("antes de retorno: ");
-  console.log(tragosFiltrados);
   return tragosFiltrados;
 };
+//======================
+//============= Bloque de funciones modularizadas y de filtrado de arrays
+
 function crearSeleccionados(ingredSelected) {
-  let divIngredSelected=document.createElement("div")
-  divIngredSelected.innerHTML=`<span class="burbuja-activa">${ingredSelected}</span>`
+  let divIngredSelected = document.createElement("div");
+  divIngredSelected.innerHTML = `<span class="burbuja-activa">${ingredSelected}</span>`;
   selected.appendChild(divIngredSelected);
 }
-
-//============= Bloque de funciones modularizadas y de filtrado de arrays
 
 //si hay un solo click, le pasa un ingrediente y un arreglo de tragos y retorna un nuevo arreglo
 function primerClick(ingrediente, tragos) {
@@ -129,59 +146,54 @@ function segundoClick(arregloIngred, ingredienteNuevo, tragos) {
   let filtrados = filtrarTragos(ingredienteNuevo, auxFilter); //llamo al filtro pero le paso un array previamente filtrado
   return filtrados;
 }
-
+//mete en un array las opciones clickeadas del usuario
 function ingredIncluido(ingred, ingredSelected) {
   if (ingred.includes(ingredSelected) == false) {
     ingred.push(ingredSelected);
   }
-  
 }
-
+//contador
 function counterPlus(element) {
   if (!element.classList.contains("burbuja-activa")) {
     counterClick++;
   }
 }
-function borraBurbujaRepetida(arrayIngred,arrayTragos) {
-  let arrayBoolean=[]
+//borra las opciones que esten incluidas en todos los tragos 
+function borraBurbujaRepetida(arrayIngred, arrayTragos) {
+  let arrayBoolean = [];
 
-  arrayIngred=eliminarClickeados(arrayIngred)
+  arrayIngred = eliminarClickeados(arrayIngred);
 
-  arrayIngred.forEach((ing,index)=>{
-
+  arrayIngred.forEach((ing, index) => {
     for (let i = 0; i < arrayTragos.length; i++) {
-      
-      if(arrayTragos[i].ingredientes.includes(ing)){
-        arrayBoolean.push(true)
-      }else{
-        arrayBoolean.push(false)
+      if (arrayTragos[i].ingredientes.includes(ing)) {
+        arrayBoolean.push(true);
+      } else {
+        arrayBoolean.push(false);
       }
     }
-    
-    
-    if(!arrayBoolean.includes(false)){
 
-      arrayIngred.splice(index,1)//ingrediente a borrar de la lista
-      renderIngredientes(arrayIngred)
+    if (!arrayBoolean.includes(false)) {
+      arrayIngred.splice(index, 1); //ingrediente a borrar de la lista
+      renderIngredientes(arrayIngred);
     }
 
-    arrayBoolean=[]
-  })
- 
+    arrayBoolean = [];
+  });
 }
+// borra las opciones que esten clickeadas por el usuario
 function eliminarClickeados(array) {
-
-  ingred.forEach((e)=>{
-    
-    let indexIng=array.indexOf(e)
-    array.splice(indexIng,1)
-  })
-  renderIngredientes(array)
-  return array
+  ingred.forEach((e) => {
+    let indexIng = array.indexOf(e);
+    array.splice(indexIng, 1);
+  });
+  renderIngredientes(array);
+  return array;
 }
 //================
 
 //=======borrar seleccion==========
+//resetea todas las opciones
 function borrarSeleccionados() {
   document.getElementById("reset").addEventListener("click", function () {
     ingred = [];

@@ -4,11 +4,11 @@ class Trago {
     this.nombre = nombre;
     this.ingredientes = ingredientes;
     this.preparacion = preparacion;
-  
+    
   }
 }
 
-//arreglo de ingredientes ingresados por usuario
+//arreglos globales
 var ingred = [];
 var tragos = [];
 var tragosPrimerClick=[];
@@ -31,18 +31,9 @@ $(() => {
       mostrarTrago(tragos);
 
 
-      //============burbujas mostradas de los ingredientes===========
-
+      //============funcion de mostrado principal ===========
+      //esta funcion desencadena las siguientes
       listaIngredUser(tragos);
-
-      //============filter=================//
-
-      //selector de las opciones
-      
-      // selectorIngred()
-        //filtro
-        
-      // filtrarTragos(ingred)
       
       
       //===========Borrar=================//
@@ -53,23 +44,26 @@ $(() => {
     
 });
 
+//locale storage
 
+//almacena el array de objetos en Locale
+// function guardarJSON(tragosPrimerClick){
+//   const tragosJSON = JSON.stringify(tragosPrimerClick);
+//   localStorage.setItem("Tragos Filtrados por un Click", tragosJSON);
+
+// }
       
 
       
 
 
 //===========comentarios==========
-//locale storage
-/*
-//almacena el array de objetos en Locale
-const tragosJSON = JSON.stringify(tragosSinJSON);
-localStorage.setItem("Tragos", tragosJSON);
+
 
 //obtiene el array de objetos de Locale
-const tragos = JSON.parse(localStorage.getItem("Tragos"));
-console.log(tragos);
-*/
+// const tragos = JSON.parse(localStorage.getItem("Tragos"));
+// console.log(tragos);
+
 
 //arreglo de tragos
 /*
