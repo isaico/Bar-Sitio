@@ -15,7 +15,7 @@ var tragosPrimerClick=[];
 
 //metodo get para el JSON local
 $(() => {
-  fetch("GET.json")
+  fetch("GET.JSON")
     .then((respuesta) => respuesta.json())
     .then((datos) => {
       for (let dato of datos) {
