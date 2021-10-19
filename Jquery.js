@@ -16,32 +16,11 @@
           
         }
 
-        // var copiaIngred=[...arrayIngred]
-        //   if(copiaIngred.length>0){
-      //     for (let index = 0; index < copiaIngred.length; index++) {
-            
-      //       if(copiaIngred[index]!=arrayTragos[i].ingredientes[j]){//no agrega el ingrediente seleccionado
-              
-      //         allIngredientes.push(arrayTragos[i].ingredientes[j])
-  
-      //       }
-      //     }
-
-      //   }else{
-
-      //     if(copiaIngred[0]!=arrayTragos[i].ingredientes[j]){//no agrega el ingrediente seleccionado
-          
-      //       allIngredientes.push(arrayTragos[i].ingredientes[j])
-
-      //     }
-      //  }
       }
         
     }
   
 
-    console.log(allIngredientes)
-    
     //ordeno alfabeticamente
     allIngredientes.sort()
 
@@ -50,6 +29,7 @@
     
     return allIngredientes
   }
+  
   function renderIngredientes (arrayIngredientes) {
 
     document.getElementById("burbuja-container").innerHTML=""

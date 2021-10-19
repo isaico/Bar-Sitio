@@ -44,49 +44,4 @@ $(() => {
     
 });
 
-//locale storage
 
-//almacena el array de objetos en Locale
-// function guardarJSON(tragosPrimerClick){
-//   const tragosJSON = JSON.stringify(tragosPrimerClick);
-//   localStorage.setItem("Tragos Filtrados por un Click", tragosJSON);
-
-// }
-      
-
-      
-
-
-//===========comentarios==========
-
-
-//obtiene el array de objetos de Locale
-// const tragos = JSON.parse(localStorage.getItem("Tragos"));
-// console.log(tragos);
-
-
-//arreglo de tragos
-/*
-const tragosSinJSON = [
-  new Trago(
-    
-    "caipiriña",
-    ["hielo", "lima", "azucar", "cachaca"],
-    "macerar lima y azucar, agregar  hielo roto y cachaca, luego batir"
-  ),
-
-  new Trago(
-    
-    "mojito",
-    ["hielo", "lima", "azucar", "ron", "menta", "soda"],
-    "macerar lima y azucar, agregar menta, hielo roto, ron, y terminar con soda"
-  ),
-
-  new Trago(
-    
-    "julepe de cynar",
-    ["hielo", "lima", "azucar", "cynar", "menta", "gaseosa pomelo"],
-    "macerar lima y azucar, agregar menta, hielo roto, cynar, y terminar con gaseosa pomelo"
-  ),
-];
-*/

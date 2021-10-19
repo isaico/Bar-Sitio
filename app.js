@@ -113,7 +113,6 @@ const filtrarTragos = (ingrediente, tragos) => {
   let tragosFiltrados = [];
   let tragosFiltradosDup = [];
 
-  console.log("clickeados: " + ingrediente);
   tragos.forEach((trago) => {
     if (trago.ingredientes.includes(ingrediente)) {
       tragosFiltradosDup.push(trago);

@@ -31,7 +31,6 @@ body {
 .header {
     width: 100vw;
     min-height: 100vh;
-    /* background-color: black; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -92,14 +91,6 @@ body {
         0 0 .2em var(--white-shadow),
         0 0 .1em var(--pink-shadow);
 
-    /* box-shadow:
-        inset 0 0 .1em var(--white-shadow),
-        0 0 .1em var(--white-shadow),
-        inset 0 0 .2em var(--pink-shadow),
-        0 0 .2em var(--pink-shadow); */
-
-
-    /* border: 6px solid hsla(325 90% 85%/1); */
     
     z-index: 3;
 }
@@ -158,7 +149,7 @@ body {
     position:relative;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly; */
+    
     
 }
 
